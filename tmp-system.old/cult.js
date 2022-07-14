@@ -3,11 +3,7 @@
   part of Anubis System
   Sett Sarverott 2019
 */
-try{
-  const Person=require("./person.js");
-}catch(e){
-  null;
-}
+const Person=require("./person.js");
 
 class Cult{
   constructor(
@@ -91,8 +87,4 @@ class Cult{
   }
 }
 
-try{
-  module.exports=Cult;
-}catch(e){
-  null;
-}
+module.exports=Cult;

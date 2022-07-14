@@ -1,0 +1,42 @@
+{
+  "name": "skriptonus",
+  "version": "1.0.0",
+  "description": "application core system, for code poets, fans of darkness and very futuristic projects, initially target skeleton for Anubis project",
+  "main": "skriptonus.js",
+  "scripts": {
+    "test": "jest",
+    "start": "node skriptonus.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sarverott/skriptonus.git"
+  },
+  "keywords": [
+    "core",
+    "system",
+    "application",
+    "anubis",
+    "dark",
+    "darkness",
+    "coded",
+    "poem",
+    "futuristic",
+    "skeleton",
+    "ocultistic",
+    "cult",
+    "preacher",
+    "demon",
+    "lure",
+    "sorcerery",
+    "spirits"
+  ],
+  "author": "Sett Sarverott",
+  "license": "GPL-3.0-or-later",
+  "bugs": {
+    "url": "https://github.com/Sarverott/skriptonus/issues"
+  },
+  "homepage": "https://github.com/Sarverott/skriptonus#readme",
+  "devDependencies": {
+    "jest": "^28.1.2"
+  }
+}

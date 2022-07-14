@@ -3,12 +3,15 @@
   part of Anubis System
   Sett Sarverott 2019
 */
+/*
 try{
   const Cult=require("./cult.js");
   const Preacher=require("./preacher.js");
 }catch(e){
   null;
 }
+*/
+var
 
 class Shrine{
   constructor(name=null){
