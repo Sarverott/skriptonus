@@ -18,13 +18,20 @@
 //console.log(Skriptonus);
 //const Skriptonus=require("../skriptonus.js");
 module.exports=function(Skriptonus){
-  return class FundamentalInformation{
-    constructor(...args){
+  return class FundamentalInformation
+  extends Skriptonus
+  {
+    constructor(){
+      super();
       //console.log(Skriptonus);
       this.name=Skriptonus.executeBaptism;
-      //this.fatum=new Skriptonus.FatumContinuum(this);
+      //this.fatum=null;
+      //console.log(this.name)
       this.data=null;
       //this.setupFoundation(...args);
+    }
+    destructor(...args){
+      Skriptonus.throwExcommunication=this.name;
     }
     //unitUnitaryEventEmitter(){
 

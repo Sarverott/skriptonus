@@ -17,8 +17,29 @@
 */
 module.exports=function(Skriptonus){
   return class RegularPerson
-  extends Skriptonus.BeingExistance{
-
+  extends Skriptonus.BeingExistance
+  {
+    static get ALL(){
+      RegularPerson.ALL=[];
+      return RegularPerson.allExceptions;
+    }
+    static set ALL(item){
+      if(
+        !RegularPerson.hasOwnProperty("allExceptions")
+      )RegularPerson.allExceptions=item;
+    }
+    constructor(){
+      super();
+      RegularPerson.ALL.push(this);
+    }
+    /*
+    destructor(){
+      RegularPerson.ALL.splice(
+        RegularPerson.ALL.indexOf(this),
+        1
+      );
+    }
+    */
     get value(){
       return this.data;
     }

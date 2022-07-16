@@ -17,7 +17,7 @@
 */
 module.exports=function(Skriptonus){
   return class LuminocityMatter
-  extends Skriptonus.FundamentalInformation
+  extends Skriptonus
   {
 
     get value(){

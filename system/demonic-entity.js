@@ -18,7 +18,27 @@
 module.exports=function(Skriptonus){
   return class DemonicEntity
   extends Skriptonus.BeingExistance{
-
+    static get ALL(){
+      DemonicEntity.ALL=[];
+      return DemonicEntity.allExceptions;
+    }
+    static set ALL(item){
+      if(
+        !DemonicEntity.hasOwnProperty("allExceptions")
+      )DemonicEntity.allExceptions=item;
+    }
+    constructor(){
+      super();
+      DemonicEntity.ALL.push(this);
+    }
+    /*
+    destructor(){
+      DemonicEntity.ALL.splice(
+        DemonicEntity.ALL.indexOf(this),
+        1
+      );
+    }
+    */
     get value(){
       return this.data;
     }

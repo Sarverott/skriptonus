@@ -21,7 +21,8 @@ module.exports=function(Skriptonus){
   {
     constructor(){
       super();
-      this.name=Skriptonus.executeBaptism;
+      this.contextlocation=null;
+      //this.name=Skriptonus.executeBaptism;
     }
     get value(){
       return this.data;

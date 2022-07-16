@@ -19,6 +19,15 @@ module.exports=function(Skriptonus){
   return class AbsolutFormula
   extends Skriptonus.DivineArtifact
   {
+    constructor(...args){
+      super();
+      //console.log(Skriptonus);
+      this.people=Skriptonus.RegularPerson.ALL;
+      this.buildings=Skriptonus.ArchitectonicStructure.ALL;
+      this.gods=Skriptonus.DemonicEntity.ALL;
+      this.chronologics=Skriptonus.FatumContinuum.ALL;
+      this.networks=Skriptonus.LiaisonStigma.ALL;
+    }
 
     get value(){
       return this.data;

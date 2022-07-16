@@ -1,9 +1,8 @@
-
 module.exports=function(Skriptonus){
-  return class WorshipShrine
+  return class GrimmMonastry
   extends Skriptonus.ArchitectonicStructure
   {
-    
+
     get value(){
       return this.data;
     }

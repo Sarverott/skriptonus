@@ -2,6 +2,7 @@ module.exports=function(Skriptonus){
   return class CultSect
   extends Skriptonus.LiaisonStigma
   {
+    
     memberPrinciple(item){
       return item instanceof Skriptonus.RegularPerson
     }

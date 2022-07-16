@@ -17,7 +17,7 @@
 */
 module.exports=function(Skriptonus){
   return class ObscurityMatter
-  extends Skriptonus.FundamentalInformation
+  extends Skriptonus
   {
 
     get value(){

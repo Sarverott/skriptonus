@@ -1,16 +1,28 @@
-const {EventEmitter, captureRejectionSymbol}=require('events');
-
 module.exports=function(Skriptonus){
-  return class FatumContinuum extends EventEmitter{
-    constructor(subjectOfDestiny, exceptions={}){
-      super({captureRejections:true});
-      this.fateSubject=subjectOfDestiny;
-      this.paradoxPrevention=exceptions;
+  return class FatumContinuum
+  extends Skriptonus.FundamentalInformation{
+    static get ALL(){
+      FatumContinuum.ALL=[];
+      return FatumContinuum.allExceptions;
     }
-    [captureRejectionSymbol](err, event, ...args) {
-      if(this.paradoxPrevention.hasOwnProperty("rejection"))
-        this.paradoxPrevention.rejection(err, event, ...args);
+    static set ALL(item){
+      if(
+        !FatumContinuum.hasOwnProperty("allExceptions")
+      )FatumContinuum.allExceptions=item;
     }
+    constructor(){
+      super();
+      //this.name=Skriptonus.executeBaptism;
+      FatumContinuum.ALL.push(this);
+    }
+    /*
+    destructor(){
+      FatumContinuum.ALL.splice(
+        FatumContinuum.ALL.indexOf(this),
+        1
+      );
+    }
+    */
     get value(){
       return this.data;
     }

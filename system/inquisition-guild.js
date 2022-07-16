@@ -2,6 +2,7 @@ module.exports=function(Skriptonus){
   return class InquisitionGuild
   extends Skriptonus.LiaisonStigma
   {
+    
     memberPrinciple(item){
       return item instanceof Skriptonus.BeingExistance
     }

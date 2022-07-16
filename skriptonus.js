@@ -18,81 +18,53 @@
 const vm=require("vm");
 const fs=require("fs");
 const path=require("path")
-
+const {EventEmitter, captureRejectionSymbol}=require('events');
 //const FatumConsequencion=require("./fatum-consequencion.js");
 
 //global.creationPhillars=new FatumConsequencion();
 
+function loadJson(filepath){
+  return JSON.parse(fs.readFileSync(filepath));
+}
+function saveJson(filepath, context){
+  fs.writeFileSync(filepath, JSON.stringify(context))
+}
 
-class Skriptonus{
-  //static ;
+class Skriptonus extends EventEmitter{
   constructor(){
-    //Object.assign(this, seedOfSkriptonus);
-    //if(Skriptonus.UNIVERSE !== null)delete Skriptonus.UNIVERSE;
-    //Skriptonus.UNIVERSE=this;
-    //this.UNIVERSE=this;
-    //this.FATUM=new Skriptonus.FatumConsequencion();
-    //this.nameChronicle={};
-    this.caseTool=
-    this.spell=null;
-    this.summonChain=[];
-    //this.enchantment="the-makers-book";
+    super();
   }
-  inmagine(className){
-    this.spell={
-      name:className,
-      type:"proto",
-      properties:{},
-      methods:{}
-    }
-  }
-  asGrain(){
-    this.summonChain.push(this.spell);
-  }
-  rootedIn(extendName){
-    this.spell.root=extendName;
-  }
-  draftBy(constructFunct){
-    this.spell.draft=constructFunct;
-  }
-  itHas(label, value, config={}){
-    this.spell.property[label]=Object.assign(config, {value});
-  }
-  itCan(label, operation){
-    this.spell.methods[label]=operation;
-  }
-  invoke(){
-    this.summonChain.push(this.spell);
-    this.spell=null;
+  deployFilesystemWatch(){
+    var tmpThis=this;
+    this.watcher=fs.watch(
+      this.mountpath,
+      this.watchsetup,
+      function(eventType, filename){
+        //tmpThis.act()
+      }
+    );
   }
   static elementalDraft(draftname){
     return Skriptonus.draftToSpellname(path.basename(draftname, ".js"))
   }
   static theBigBang(){
-
+    Skriptonus.universe=new Skriptonus.AbsolutFormula();
+    //return Skriptonus.UNIVERSE;
   }
   static invokationEnchantment(
     draftName,
     baseDepend=false,
     behavioralGenotype='//behavioral genotype'
   ){
-    var extender=baseDepend?`
-    extends Skriptonus.${draftToSpellname(baseDepend)}`:'';
+    var extender=baseDepend?` extends Skriptonus.${draftToSpellname(baseDepend)}`:'';
     return `
-  module.exports=function(Skriptonus){
-    return class ${draftToSpellname(draftName)}${extender}
-    {
-      ${behavioralGenotype}
-      get value(){
-        return this.data;
+      module.exports=function(Skriptonus){
+        return class ${draftToSpellname(draftName)}${extender}{
+          ${behavioralGenotype}
+        };
       }
-      set value(indata){
-        this.data=indata;
-      }
-    };
-  }
     `
-
+    return content;
   }
   static draftToSpellname(draftname){
     return draftname
@@ -119,69 +91,72 @@ class Skriptonus{
   }
   static enchantNature(){
     //Skriptonus.RELM=vm.createContext(new Skriptonus());
-    Skriptonus.loadPhillarsPaths().forEach(
-      function(item){
-        Skriptonus.draftEnchantment(item)
-      }
-    );
+    for(var item of Skriptonus.loadPhillarsPaths()){
+      Skriptonus.draftEnchantment(item);
+      //yield item;
+    }
   }
   static draftEnchantment(draftname){
-    //console.log(draftname)
+    if(!Skriptonus.hasOwnProperty("phillars"))Skriptonus.phillars={}
     Object.defineProperty(
       Skriptonus,
       Skriptonus.elementalDraft(draftname),
       {
-        get:function(){
-          return require(path.join(__dirname, Skriptonus.basecodeDir, draftname))(Skriptonus)
+        get(){
+          if(
+            !Skriptonus.phillars.hasOwnProperty(
+              Skriptonus.elementalDraft(draftname)
+            )
+          )Skriptonus.phillars[
+            Skriptonus.elementalDraft(draftname)
+          ]=require(
+            path.join(
+              __dirname,
+              Skriptonus.basecodeDir,
+              draftname
+            )
+          )(Skriptonus);
+          return Skriptonus.phillars[
+            Skriptonus.elementalDraft(draftname)
+          ];
         }
       }
     );
   }
   static plantBearing(seedOfSkriptonus){
-    Object.assign(Skriptonus, JSON.parse(
-      fs.readFileSync(seedOfSkriptonus)
-    ));
-    //Skriptonus.phillars={};
+    Object.assign(Skriptonus, loadJson(seedOfSkriptonus));
+    //={};
     //console.log(Skriptonus);
-    Skriptonus.UNIVERSE=null;
-    Skriptonus.enchantNature();
+    Skriptonus.nameChronicle=[];
+    Skriptonus.universe=null;
   }
-  /*
-  static manufactureAppellation(){
-    Skriptonus.elementals={};
+  static set throwExcommunication(name){
+    if(Skriptonus.nameChronicle.includes(name)){
+      Skriptonus.nameChronicle.splice(
+        Skriptonus.nameChronicle.indexOf(name), 1
+      );
+    }
+    //Skriptonus.universe.emit("skriptonus-orders", name, "to vanish from existence");
+  }
+  static set executeBaptism(customName){
 
-  }*/
+  }
   static get executeBaptism(){
-
-    return "JAN KOWALSKI"
+    var tmpname="";
+    while(tmpname==""||Skriptonus.nameChronicle.includes(tmpname)){
+      tmpname=""
+      var tmpnamelength=Math.random()*Skriptonus.namelength;
+      for(var i=0;i<tmpnamelength;i++){
+        tmpname+=Skriptonus.namebase.split("-")[
+          Math.floor(
+            Math.random()*Skriptonus.namebase.split("-").length
+          )
+        ]
+      }
+    }
+    Skriptonus.nameChronicle.push(tmpname);
+    return tmpname;
   }
 }
 //Skriptonus.plantBearing("./seed-of-skriptonus.json")
-
-if(require.main===module){
-  //console.log(listElementalCapableElements("skriptonus.js", "seed-of-skriptonus.js", "fatum-consequencion.js"));
-  //Skriptonus.defineBearing(require());
-//  Skriptonus.manufactureAppellation()
-  Skriptonus.plantBearing("./seed-of-skriptonus.json")
-  //var testworld=new Skriptonus();
-  console.log(Skriptonus);
-  console.log(Skriptonus.FundamentalInformation);
-  console.log(new Skriptonus.BeingExistance());
-}else{
-  module.exports=Skriptonus;
-}
-/*
-class const DRAFT={
-  set LECTURER(realSystem){
-    DRAFT.UNIVERSE=realSystem.UNIVERSE;
-    DRAFT.REALITY=realSystem;
-    Object.seal(DRAFT);
-  },
-  get INVOKATION(){
-    if(!Object.isSealed(DRAFT))throw "NOT_LECTURED_DRAFT_CAN_NOT_BE_INVOKED";
-    return
-
-  }
-}
-
-*/
+module.exports=Skriptonus;
