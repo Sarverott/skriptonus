@@ -29,13 +29,14 @@ function loadJson(filepath){
 function saveJson(filepath, context){
   fs.writeFileSync(filepath, JSON.stringify(context))
 }
-
 class Skriptonus extends EventEmitter{
   constructor(){
     super();
   }
+  
   deployFilesystemWatch(){
     var tmpThis=this;
+    this.watcherEditResponse=false;
     this.watcher=fs.watch(
       this.mountpath,
       this.watchsetup,

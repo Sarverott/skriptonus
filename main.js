@@ -7,7 +7,7 @@ if(require.main===module){
   Skriptonus.enchantNature();
   Skriptonus.theBigBang();
   const promptConfig={
-    prompt:'#~skriptonus_prompt~> '
+    prompt:'#~makers_enchantment_book~> '
   };
   const prompt=new repl.REPLServer(promptConfig);
   Object.assign(prompt.context, {
