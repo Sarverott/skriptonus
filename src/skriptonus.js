@@ -39,7 +39,7 @@ class Skriptonus extends EventEmitter{
   }
   static theBigBang(){
     Skriptonus.debug("BEG");
-    //console.log("")
+    console.log(Skriptonus);
     Skriptonus.defineSingularityPoint(path.dirname(__dirname));
     Skriptonus.plantBearing(path.join(__dirname, "seed-of-realm.json"));
     Skriptonus.castNature();

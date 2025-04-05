@@ -17,7 +17,13 @@ function testEnviroment(){
     "SorcerersTumb","SpiritualPreacher","TempleUnion",
     "WorshipShrine"
   ]
-  Skriptonus.plantBearing("./seed-of-skriptonus.json")
+  Skriptonus.genesisDependencies();
+  Skriptonus.plantBearing(
+    path.join(
+      __dirname, 
+      "seed-of-realm.json"
+    )
+  );
   if(process.argv.includes("--list-phillars")){
     for(var item of Skriptonus.loadPhillarsPaths()){
       if(process.argv.includes("--kebabcase"))
@@ -29,7 +35,7 @@ function testEnviroment(){
       else console.log(path.basename(item, ".js").split("-").join(" "));
     }
   }
-  Skriptonus.enchantNature();
+  //Skriptonus.enchantNature();
   if(process.argv.includes("--all-classes")){
     console.log(Skriptonus);
     if(process.argv.includes("--new-instances")){
