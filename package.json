@@ -41,5 +41,46 @@
   "bugs": {
     "url": "https://github.com/Sarverott/skriptonus/issues"
   },
-  "homepage": "https://github.com/Sarverott/skriptonus#readme"
+  "homepage": "https://github.com/Sarverott/skriptonus#readme",
+  "dependencies": {
+    "@solana/web3.js": "^1.98.0",
+    "@stellar/stellar-sdk": "^13.2.0",
+    "@zoralabs/coins-sdk": "^0.0.3",
+    "composerize": "^1.7.1",
+    "decomposerize": "^1.4.4",
+    "dockerode": "^4.0.5",
+    "isomorphic-git": "^1.30.1",
+    "mysql": "^2.18.1",
+    "opentimestamps": "^0.0.0",
+    "puppeteer-core": "^24.6.0",
+    "pyodide": "^0.27.5",
+    "socket.io": "^4.8.1",
+    "synk": "^0.0.2"
+  },
+  "devDependencies": {
+    "@actions/core": "^1.11.1",
+    "@actions/exec": "^1.1.1",
+    "@discord/embedded-app-sdk": "^1.9.0",
+    "@mlc-ai/web-llm": "^0.2.78",
+    "@themaximalist/llm.js": "^0.6.5",
+    "babel": "^6.23.0",
+    "browserfs": "^1.4.3",
+    "discord-interactions": "^4.1.1",
+    "electron": "^35.1.4",
+    "eslint": "^9.24.0",
+    "express": "^5.1.0",
+    "hive-tx": "^6.1.0",
+    "jest": "^29.7.0",
+    "jsdoc": "^4.0.4",
+    "mongodb": "^6.15.0",
+    "nativescript": "^8.5.3",
+    "node-virustotal": "^2.0.8",
+    "obsidian": "^1.8.7",
+    "prettier": "^3.5.3",
+    "shodan-client": "^3.1.5",
+    "ssh2": "^1.16.0",
+    "tumblr.js": "^5.0.0",
+    "vue": "^3.5.13",
+    "webpack": "^5.98.0"
+  }
 }
