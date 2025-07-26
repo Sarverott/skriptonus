@@ -1,0 +1,38 @@
+[tool.poetry]
+name = "skriptonus"
+version = "1.0.0"
+description = "application core system, for code poets, fans of darkness and very futuristic projects, initially target skeleton for Anubis project"
+authors = ["Sett Sarverott <sarverott@gmail.com>"]
+license = "MIT"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+docker = "^7.1.0"
+pyngrok = "^7.2.12"
+ollama = "^0.5.1"
+paramiko = "^3.5.1"
+requests = "^2.32.4"
+beautifulsoup4 = "^4.13.4"
+podman = "^5.5.0"
+fastapi = "^0.116.1"
+flask = "^3.1.1"
+scapy = "^2.6.1"
+pyyaml = "^6.0.2"
+gitpython = "^3.1.45"
+pygithub = "^2.6.1"
+darkpoint = "^0.2.0"
+virtualbox = "^2.1.1"
+shodan = "^1.31.0"
+notebook = "^7.4.4"
+ipyfs = "^0.1.3"
+huggingface-hub = "^0.34.1"
+openapi = "^2.0.0"
+certbot = "^4.1.1"
+cproto = "^0.7.2"
+selenium = "^4.34.2"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
