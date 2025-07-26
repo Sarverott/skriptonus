@@ -1,0 +1,1 @@
+sudo apt install clamav calmav-deamon libclamunrar9
