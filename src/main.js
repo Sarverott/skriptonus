@@ -1,6 +1,10 @@
 const Skriptonus=require('./skriptonus');
 const repl=require("repl");
+<<<<<<< HEAD
 const path = require('path');
+=======
+const fs = require('fs');
+>>>>>>> recall-engine-dev
 
 function getColor(zloc, color){
   const loc={
@@ -77,7 +81,10 @@ if(require.main===module){
 
   }
   */
+<<<<<<< HEAD
  
+=======
+>>>>>>> recall-engine-dev
 }else{
   module.exports=Skriptonus;
 }
