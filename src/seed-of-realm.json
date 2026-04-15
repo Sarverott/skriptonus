@@ -6,9 +6,11 @@
       "universe.js"
     ],
     "from-realm-branches":[
-      "system-lair",
-      "core-fundations",
+      "src",
+      "docs",
+      ".github",
       "node_modules",
+      ".husky",
       ".git"
     ]
   },

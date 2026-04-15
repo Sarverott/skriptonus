@@ -28,7 +28,7 @@ module.exports=function(Skriptonus){
       }
     }
     destructor(...args){
-      Skriptonus.throwExcommunication=this.name;
+      //Skriptonus.throwExcommunication=this.name;
     }
     //unitUnitaryEventEmitter(){
 

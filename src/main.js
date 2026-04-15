@@ -1,6 +1,6 @@
 const Skriptonus=require('./skriptonus');
 const repl=require("repl");
-const fs = require('fs');
+const path = require('path');
 
 function getColor(zloc, color){
   const loc={
@@ -25,9 +25,16 @@ function resetColor(){
 
 if(require.main===module){
   //console.log(listElementalCapableElements("skriptonus.js", "seed-of-skriptonus.js", "fatum-consequencion.js"));
-  Skriptonus.plantBearing("./seed-of-skriptonus.json");
-  Skriptonus.enchantNature();
-  Skriptonus.theBigBang();
+  Skriptonus.genesisDependencies();
+  Skriptonus.plantBearing(
+    path.join(
+      __dirname, 
+      "seed-of-realm.json"
+    )
+  );
+  //Skriptonus.enchantNature();
+  Skriptonus.theBigBang()
+
   const promptConfig={
     prompt:(
       //getColor('back', 'red')+

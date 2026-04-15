@@ -24,9 +24,9 @@ class Skriptonus extends EventEmitter{
   }
 
   static include(...extendingPaths){
-    extendingPaths.forEach(
-      (script)=>Object.assign(Skriptonus, require(script))
-    );
+    for(var script of extendingPaths){
+      Object.assign(Skriptonus, require(script))
+    }
   }
   static genesisDependencies(){
     Skriptonus.include(
@@ -41,7 +41,7 @@ class Skriptonus extends EventEmitter{
     Skriptonus.debug("BEG");
     console.log(Skriptonus);
     Skriptonus.defineSingularityPoint(path.dirname(__dirname));
-    Skriptonus.plantBearing(path.join(__dirname, "seed-of-realm.json"));
+    //Skriptonus.plantBearing(path.join(__dirname, "seed-of-realm.json"));
     Skriptonus.castNature();
 
     Skriptonus.buildSkeletonTree();
