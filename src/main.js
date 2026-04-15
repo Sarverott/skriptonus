@@ -34,7 +34,7 @@ if(require.main===module){
   );
   //Skriptonus.enchantNature();
   Skriptonus.theBigBang()
-
+  Skriptonus.plantBearing(path.join(__dirname, "seed-of-realm.json"));
   const promptConfig={
     prompt:(
       //getColor('back', 'red')+
@@ -77,6 +77,7 @@ if(require.main===module){
 
   }
   */
+ 
 }else{
   module.exports=Skriptonus;
 }
